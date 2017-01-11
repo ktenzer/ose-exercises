@@ -12,16 +12,49 @@ Username: keith.tenzer@mydomain.com
 Password: 
 The system has been registered with ID: a05ce453-3883-4d73-b2f7-625fab64c05b
 ```
+##Attach subscription
+```
+[root@ose3 ~]# subscription-manager attach --auto
+
+All installed products are covered by valid entitlements. No need to update subscriptions at this time.
+
+Installed Product Current Status:
+Product Name: Red Hat Enterprise Linux Server
+Status:       Subscribed
+```
+##Enable required repositories
+```
+[root@ose3 ~]# subscription-manager repos \
+    --enable="rhel-7-server-rpms" \
+    --enable="rhel-7-server-extras-rpms"
+```
+##Disable firewalld
+```
+[root@ose3 ~]# systemctl disable firewalld
+[root@ose3 ~]# systemctl stop firewalld
+```
 ## Update system
 ```
-[root@ose3 ~]# yum update
+[root@ose3 ~]# yum update -y
 ```
 ##Install Docker
 ```
 [root@ose3 ~]# yum install -y docker
 ```
 ##Configure Docker
-##Copy oc command to /usr/local/bin
+```
+[root@ose3 ~]# vi /etc/sysconfig/docker
+INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
+```
+##Enable and start Docker
+```
+[root@ose3 ~]# systemctl enable docker
+[root@ose3 ~]# systemctl start docker
+```
+##Extract tar and copy oc command to /usr/local/bin
+```
+[root@ose3 ~]# tar xvf oc-3.3.1.5-linux.tar.gz;mv oc /usr/local/bin
+```
 ## Start OpenShift CLuster
 ```
 [root@ose3 ~]# /usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose"
