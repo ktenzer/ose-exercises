@@ -55,7 +55,7 @@ INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
 ```
 [root@ose3 ~]# tar xvf oc-3.3.1.5-linux.tar.gz;mv oc /usr/local/bin
 ```
-## Start OpenShift CLuster
+## Start OpenShift Cluster
 ```
 [root@ose3 ~]# /usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose"
 ```
