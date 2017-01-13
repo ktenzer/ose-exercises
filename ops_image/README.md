@@ -2,15 +2,37 @@
 ## CREATE PROJECTS
 ### Create operations and development projects for our ruby application.
 ```
-# oc login -u admin
+# oc login -u system:admin
 # oc new-project ruby-ops
 # oc new-project ruby-dev
 ```
 ##SETUP USERS
 ###Create a user for development and operations.
 ```
-# htpasswd /etc/origin/master/htpasswd dev
-# htpasswd /etc/origin/master/htpasswd ops
+# vi dev.yaml
+apiVersion: v1
+groups: null
+identities:
+- anypassword:dev
+kind: User
+metadata:
+  name: dev
+```
+```
+#oc create -f dev.yaml
+```
+```
+#vi ops.yaml
+apiVersion: v1
+groups: null
+identities:
+- anypassword:ops
+kind: User
+metadata:
+  name: ops
+```
+```
+#oc create -f ops.yaml
 ```
 ##Create ops and dev users
 ```
