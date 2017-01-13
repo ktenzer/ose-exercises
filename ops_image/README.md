@@ -34,11 +34,6 @@ metadata:
 ```
 #oc create -f ops.yaml
 ```
-##Create ops and dev users
-```
-# htpasswd /etc/origin/master/htpasswd dev
-# htpasswd /etc/origin/master/htpasswd ops
-```
 ##Enable permissions.
 ###Create three groups that allow operations to edit the ruby-ops project, allow development to view the ruby-ops project and also edit the ruby-dev project. In addition the ruby-dev project needs permission to pull images from the ruby-ops project.
 
