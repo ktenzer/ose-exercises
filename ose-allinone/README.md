@@ -59,4 +59,9 @@ INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
 ```
 [root@ose3 ~]# /usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose"
 ```
+##Login to docker container running OpenShift
+```
+[root@ose3 ~]# docker ps
+[root@ose3 ~]# docker exec -i -t <container id> /bin/bash
+```
 
