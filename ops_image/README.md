@@ -1,3 +1,4 @@
+#In this exercise we will show how ops can provide an image containing os, app and it's dependencies that can be used by dev.
 ## CREATE PROJECTS
 ### Create operations and development projects for our ruby application.
 ```
