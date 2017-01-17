@@ -51,9 +51,21 @@ INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
 [root@ose3 ~]# systemctl enable docker
 [root@ose3 ~]# systemctl start docker
 ```
+##Clone git repository
+```
+[root@ose3 ~]# git clone https://github.com/ktenzer/ose-exercises.git
+```
 ##Extract tar and copy oc command to /usr/local/bin
 ```
+[root@ose3 ~]# cd ose-exercises/ose-allinone
 [root@ose3 ~]# tar xvf oc-3.3.1.5-linux.tar.gz;mv oc /usr/local/bin
+```
+##If you don't have internet access import docker images
+```
+[root@ose3 ~]# gunzip oc_cluster_images.tar.gz
+[root@ose3 ~]# tar xvf oc_cluster_images.tar 
+[root@ose3 ~]# cd oc_cluster_images
+[root@ose3 ~]# for p in `ls`;do docker load -i $p; done
 ```
 ## Start OpenShift Cluster
 ```
