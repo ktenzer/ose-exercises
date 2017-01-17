@@ -38,9 +38,9 @@ networkConfig:
 ```
 ##Isolate projects
 ```
-oadm pod-network isolate-projects project1 project5
+# oadm pod-network isolate-projects project1 project5
 ```
 ##Enable global access to projects
 ```
-oadm pod-network make-projects-global project6
+# oadm pod-network make-projects-global project6
 ```
