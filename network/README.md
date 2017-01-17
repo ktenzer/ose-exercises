@@ -31,6 +31,7 @@ networkConfig:
   mtu: 1450 
   networkPluginName: "redhat/openshift-ovs-subnet" 
 # systemctl restart atomic-openshift-master
+```
 ##Enable network access between two projects
 ```
 # oadm pod-network join-projects --to=project1 project2 project3 project4
