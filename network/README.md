@@ -13,6 +13,7 @@ networkConfig:
 networkConfig:
   mtu: 1450 
   networkPluginName: "redhat/openshift-ovs-subnet" 
+```
 ##Restart OpenShift Services (multi master)
 ```
 # systemctl restart atomic-openshift-master-api
@@ -33,6 +34,7 @@ networkConfig:
 networkConfig:
   mtu: 1450 
   networkPluginName: "redhat/openshift-ovs-subnet" 
+```
 ##Restart OpenShift Services (multi master)
 ```
 # systemctl restart atomic-openshift-master-api
