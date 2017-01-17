@@ -13,7 +13,10 @@ networkConfig:
 networkConfig:
   mtu: 1450 
   networkPluginName: "redhat/openshift-ovs-subnet" 
-# systemctl restart atomic-openshift-master
+##Restart OpenShift Services (multi master)
+```
+# systemctl restart atomic-openshift-master-api
+# systemctl restart atomic-openshift-master-controllers
 ```
 ##Configure SDN Multitenant Plugin
 ###SDN Multitenant Plugin uses vxlan ids to segregate pods at project level. Each project has its own network
@@ -30,7 +33,10 @@ networkConfig:
 networkConfig:
   mtu: 1450 
   networkPluginName: "redhat/openshift-ovs-subnet" 
-# systemctl restart atomic-openshift-master
+##Restart OpenShift Services (multi master)
+```
+# systemctl restart atomic-openshift-master-api
+# systemctl restart atomic-openshift-master-controllers
 ```
 ##Enable network access between two projects
 ```
