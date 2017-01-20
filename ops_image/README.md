@@ -19,6 +19,7 @@ metadata:
   name: dev
 ```
 ```
+#oc project dev
 #oc create -f dev.yaml
 ```
 ```
@@ -32,6 +33,7 @@ metadata:
   name: ops
 ```
 ```
+#oc project ops
 #oc create -f ops.yaml
 ```
 ##Enable permissions.
