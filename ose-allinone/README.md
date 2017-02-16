@@ -51,6 +51,14 @@ INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
 [root@ose3 ~]# systemctl enable docker
 [root@ose3 ~]# systemctl start docker
 ```
+##Update Proxy Settings for Docker
+```
+[root@ose3 ~]# vi /etc/sysconfig/docker
+HTTP_PROXY=
+HTTPS_PROXY=
+[root@ose3 ~]# systemctl restart docker
+```
+
 ##Clone git repository
 ```
 [root@ose3 ~]# git clone https://github.com/ktenzer/ose-exercises.git
@@ -77,7 +85,7 @@ INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
 ```
 ## Start OpenShift Cluster and preserve data between restarts as well as set http/https proxy
 ```
-/usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose" --host-data-dir /root/ose --use-existing-config -e "http_proxy=<proxy" -e "https_proxy=<proxy"
+/usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose" --host-data-dir /root/ose --use-existing-config -e "http_proxy=<proxy>" -e "https_proxy=<proxy>" -e 'no_proxy=10.0.2.15,172.30.18.43'
 ```
 
 ##Login to docker container running OpenShift
