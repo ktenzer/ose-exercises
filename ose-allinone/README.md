@@ -75,6 +75,11 @@ INSECURE_REGISTRY='--insecure-registry 172.30.0.0/16'
 ```
 /usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose" --host-data-dir /root/ose --use-existing-config
 ```
+## Start OpenShift Cluster and preserve data between restarts as well as set http/https proxy
+```
+/usr/local/bin/oc cluster up --image="registry.access.redhat.com/openshift3/ose" --host-data-dir /root/ose --use-existing-config -e "http_proxy=<proxy" -e "https_proxy=<proxy"
+```
+
 ##Login to docker container running OpenShift
 ```
 [root@ose3 ~]# docker ps
