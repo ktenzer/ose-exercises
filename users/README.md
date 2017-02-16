@@ -34,3 +34,18 @@ users:
 - ops
 - ops-admin
 ```
+#create role binding from yaml
+```
+apiVersion: v1
+groupNames:
+- ops-edit
+kind: RoleBinding
+metadata:
+  name: edit
+  namespace: project1
+roleRef:
+  name: edit
+subjects:
+- kind: Group
+  name: ops-edit
+```
