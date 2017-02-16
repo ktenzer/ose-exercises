@@ -24,3 +24,13 @@ $oadm groups add-users dev user
 ```
 $oadm policy add-role-to-group edit dev -n project1
 ```
+#Create group from yaml
+```
+apiVersion: v1
+kind: Group
+metadata:
+  name: ops-edit
+users:
+- ops
+- ops-admin
+```
